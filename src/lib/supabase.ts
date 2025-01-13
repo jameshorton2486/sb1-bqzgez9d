@@ -1,10 +1,10 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = 'https://uzxhlfceordaczeksyev.supabase.co';
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV6eGhsZmNlb3JkYWN6ZWtzeWV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzY2MzYyMTIsImV4cCI6MjA1MjIxMjIxMn0.xkVDv3vGQOFrmmEVc1-GnWdpdbnHuxt7KRqZMPirJVM';
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase configuration');
+  throw new Error('Missing Supabase environment variables. Please click "Connect to Supabase" to configure your project.');
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
