@@ -14,6 +14,9 @@ import { LandingPage } from './components/landing/LandingPage';
 import { RoleDetails } from './components/landing/RoleDetails';
 import { ProtectedRoute } from './components/auth/ProtectedRoute';
 import { CourtReporterTools } from './components/transcription/CourtReporterTools';
+import { USInteractiveMap } from './components/map/USInteractiveMap';
+import { StateResourcesPage } from './components/map/StateResourcesPage';
+import { StateRequirementsPage } from './components/map/StateRequirementsPage';
 
 function App() {
   return (
@@ -26,6 +29,9 @@ function App() {
               <Route path="/" element={<LandingPage />} />
               <Route path="/login" element={<AuthForm />} />
               <Route path="/roles/:role" element={<RoleDetails />} />
+              <Route path="/map" element={<USInteractiveMap />} />
+              <Route path="/resources/:state" element={<StateResourcesPage />} />
+              <Route path="/requirements/:state" element={<StateRequirementsPage />} />
               
               {/* Protected Routes */}
               <Route path="/dashboard" element={

@@ -1,11 +1,8 @@
-// Update config.ts to include audio processing settings
+// Update config.ts to remove Deepgram settings
 const config = {
   supabase: {
     url: import.meta.env.VITE_SUPABASE_URL,
     anonKey: import.meta.env.VITE_SUPABASE_ANON_KEY,
-  },
-  deepgram: {
-    apiKey: import.meta.env.VITE_DEEPGRAM_API_KEY,
   },
   security: {
     maxLoginAttempts: Number(import.meta.env.VITE_MAX_LOGIN_ATTEMPTS) || 5,
@@ -31,7 +28,6 @@ const config = {
 const requiredVars = [
   ['VITE_SUPABASE_URL', config.supabase.url],
   ['VITE_SUPABASE_ANON_KEY', config.supabase.anonKey],
-  ['VITE_DEEPGRAM_API_KEY', config.deepgram.apiKey],
 ];
 
 for (const [name, value] of requiredVars) {
